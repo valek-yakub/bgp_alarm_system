@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import json
 """
     NAME
         pull_bgp_prefixes
@@ -13,12 +13,15 @@
 """
 
 
-def alarm_system_core():
-    pass
-
-
 def main():
-    pass
+    data = {
+        "president": {
+            "name": "Zaphod Beeblebrox",
+            "species": "Betelgeusian"
+        }
+    }
+    with open("test.json", "w") as js_file:
+        json.dump(data, js_file, indent=4)
 
 
 if __name__ == "__main__":
