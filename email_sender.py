@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import smtplib
 
-
 """
     NAME
         email_sender
@@ -16,7 +15,7 @@ import smtplib
 
 
 def notification_sender(notification_msg: str, recipients_list: list,
-                        smtp_server_settings: dict, sender_email = "BGP_ALARM_SYSTEM"):
+                        smtp_server_settings: dict, sender_email="BGP_ALARM_SYSTEM"):
     """Send the notification message to the recipients from the list of recipients"""
     server = smtplib.SMTP(smtp_server_settings["server_ip"], smtp_server_settings["port"])
     try:
