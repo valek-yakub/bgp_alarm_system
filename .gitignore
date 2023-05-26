@@ -1,0 +1,8 @@
+# Excluded everything except listed below
+/*
+!alarm_system_core.py
+!email_sender.py
+!pull_bgp_prefixes.py
+!README.txt
+!getter_snmp_info.py
+!.gitignore
