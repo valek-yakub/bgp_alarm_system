@@ -1,5 +1,11 @@
 #!/usr/bin/env python
+
+
 import json
+from pprint import pprint
+from getter_snmp_info import fetch_bgp_snmp_prefixes
+
+
 """
     NAME
         pull_bgp_prefixes
@@ -14,14 +20,10 @@ import json
 
 
 def main():
-    data = {
-        "president": {
-            "name": "Zaphod Beeblebrox",
-            "species": "Betelgeusian"
-        }
-    }
-    with open("test.json", "w") as js_file:
-        json.dump(data, js_file, indent=4)
+    with open("config.json") as config:
+        bgp_alarm_system_config = json.load(config)
+
+    pprint(bgp_alarm_system_config)
 
 
 if __name__ == "__main__":
