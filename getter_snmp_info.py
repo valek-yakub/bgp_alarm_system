@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-
+# pyasn1 == 0.4.8
 import json
 from pysnmp.hlapi import *
 from pysnmp.entity.rfc3413.oneliner import cmdgen
@@ -53,9 +53,9 @@ def primary_data_processing(prefixes_info: tuple) -> list or int:
     return prefixes_info_list
 
 
-def fetch_bgp_snmp_prefixes(device: dict, credential: dict) -> list:
+def fetch_bgp_snmp_prefixes(device: dict, credential: dict, snmp_oids: dict) -> list:
     """Get, process and return bgp prefixes in JSON format"""
-    prefixes_info = get_snmp_info(device, credential)
+    prefixes_info = get_snmp_info(device, credential, snmp_oids)
     primary_processed_prefixes_table = primary_data_processing(prefixes_info)
 
     return primary_processed_prefixes_table
